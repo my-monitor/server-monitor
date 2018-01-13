@@ -19,6 +19,7 @@ class Host extends Model
     ];
 
     const statues = [
+        'not yet checked' => '<div class="label label-info">%v Not Yet Checked</div>',
         'success' => '<div class="label label-success">%v Success</div>',
         'warning' => '<div class="label label-warning">%v Warning</div>',
         'failed' => '<div class="label label-danger">%v Failed</div>',
