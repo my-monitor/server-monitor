@@ -12,6 +12,8 @@ return [
         'elasticsearch' => Spatie\ServerMonitor\CheckDefinitions\Elasticsearch::class,
         'memcached' => Spatie\ServerMonitor\CheckDefinitions\Memcached::class,
         'mysql' => Spatie\ServerMonitor\CheckDefinitions\MySql::class,
+        'memoryusage' => App\Checks\MemoryUsage::class,
+        'cpuusage' => App\Checks\CpuUsage::class,
     ],
 
     /*
@@ -89,6 +91,22 @@ return [
      * Thresholds for disk space's alert.
      */
     'diskspace_percentage_threshold' => [
+        'warning' => 80,
+        'fail' => 90,
+    ],
+
+    /*
+     * Thresholds for memory usages's alert.
+     */
+    'memoryusage_percentage_threshold' => [
+        'warning' => 80,
+        'fail' => 90,
+    ],
+
+    /*
+     * Thresholds for cpu usages's alert.
+     */
+    'cpuusage_percentage_threshold' => [
         'warning' => 80,
         'fail' => 90,
     ],
