@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Spatie\ServerMonitor\Models\Host;
+use App\Host;
 
 class ServersController extends Controller
 {

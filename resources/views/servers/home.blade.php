@@ -17,7 +17,7 @@
                             <td>{{ $host->id }}</td>
                             <td>{{ $host->name }}</td>
                             <td>{{ $host->checks->count() }}</td>
-                            <td>{{ 'success' }}</td>
+                            <td>{!! $host->getChecksStatuses() !!}</td>
                         </tr>
                     @endforeach
                 </tbody>
