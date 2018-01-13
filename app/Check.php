@@ -37,6 +37,11 @@ class Check extends Model
         'last_ran_at', 'next_check_at', 'started_throttling_failing_notifications_at',
     ];
 
+    public static function getList()
+    {
+        return collect(array_keys(config('server-monitor.checks')));
+    }
+
     public function host(): BelongsTo
     {
         return $this->belongsTo(config('server-monitor.host_model', Host::class));
