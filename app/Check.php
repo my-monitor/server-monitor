@@ -30,4 +30,8 @@ class Check extends \Spatie\ServerMonitor\Models\Check
     public function getHtmlStatus(){
         return self::statues[$this->status];
     }
+
+    public static function getList(){
+        return array_keys(config('server-monitor.checks'));
+    }
 }
