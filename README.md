@@ -217,19 +217,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
-To run the tests you'll have to start the included node based dummy ssh server first in a separate terminal window.
-
-```bash
-cd tests/server
-npm install
-./start_server.sh
-```
-
-With the server running, you can start testing.
-
-```bash
-vendor/bin/phpunit
-```
+...TODO
 
 ## Contributing
 
