@@ -37,6 +37,11 @@ class ServersController extends Controller
         return redirect()->route('servers.home');
     }
 
+    public function show($id){
+        $server = Host::findOrFail($id);
+        return view('servers.show',compact('server'));
+    }
+
     public function edit($id){
         $server = Host::findOrFail($id);
         $checksList = Check::getList();

@@ -74,14 +74,14 @@ return [
      * own model here. The only requirement is that they should
      * extend the `Host` model provided by this package.
      */
-    'host_model' => Spatie\ServerMonitor\Models\Host::class,
+    'host_model' => App\Host::class,
 
     /*
      * To add or modify behaviour to the `Check` model you can specify your
      * own model here. The only requirement is that they should
      * extend the `Check` model provided by this package.
      */
-    'check_model' => Spatie\ServerMonitor\Models\Check::class,
+    'check_model' => App\Check::class,
 
     /*
      * Right before running a check it's process will be given to this class. Here you
