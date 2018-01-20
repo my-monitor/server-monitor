@@ -48,7 +48,7 @@
                     @foreach($checksList as $i => $check)
                         <div class="form-group col-md-4">
                             <label for="{{ $check }}">
-                                <input type="checkbox" id="{{ $check }}" name="checks[]" value="{{ $check }}">
+                                <input type="checkbox" id="{{ $check }}" @if($server->hasCheckType($check)) checked @endif name="checks[]" value="{{ $check }}">
                                 {{ strtoupper($check) }}
                             </label>
                             @if($errors->has('checks.'.$i))
