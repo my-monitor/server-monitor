@@ -36,4 +36,28 @@ class ServersController extends Controller
         }
         return redirect()->route('servers.home');
     }
+
+    public function edit($id){
+        $server = Host::findOrFail($id);
+        $checksList = Check::getList();
+        return view('servers.edit',compact('server','checksList'));
+    }
+
+    public function update(StoreHostRequest $request, $id){
+        $host = Host::findOrFail($id);
+        $host->name = $request->input('host_name');
+        $host->ip = $request->input('host_ip');
+        $host->ssh_user = $request->input('ssh_user');
+        $host->port = $request->input('ssh_port');
+        $host->update();
+        $host->checks()->delete();
+        foreach($request->input('checks') as $checkName) {
+            $host->checks()->create([
+                'type' => $checkName,
+                'status' => CheckStatus::NOT_YET_CHECKED,
+                'custom_properties' => [],
+            ]);
+        }
+        return redirect()->route('servers.home');
+    }
 }

@@ -24,7 +24,7 @@
                             <td>{{ $host->name }}</td>
                             <td>{{ $host->checks->count() }}</td>
                             <td>{!! $host->getChecksStatuses() !!}</td>
-                            <td><a href="#" class="btn btn-warning btn-xs">Edit</a></td>
+                            <td><a href="{{ route('servers.edit',$host->id) }}" class="btn btn-warning btn-xs">Edit</a></td>
                         </tr>
                     @endforeach
                 </tbody>
