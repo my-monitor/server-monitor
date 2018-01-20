@@ -32,6 +32,6 @@ class Check extends \Spatie\ServerMonitor\Models\Check
     }
 
     public static function getList(){
-        return array_keys(config('server-monitor.checks'));
+        return collect(array_keys(config('server-monitor.checks')));
     }
 }
