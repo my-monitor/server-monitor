@@ -19,7 +19,7 @@ The full documentation is available on [our documentation site](https://docs.spa
 You can clone the repository using the below command:
 
 ```bash
-git clone https://github.com/ahmedash95/server-monitor.git my-server-monitor
+git clone https://github.com/my-monitor/server-monitor.git my-server-monitor
 ```
 
 this will create a directory named `my-server-monitor`, cd into it and run `composer install` command
