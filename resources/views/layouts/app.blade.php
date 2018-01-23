@@ -37,6 +37,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        @if(auth()->check())
+                        <li><a href="{{ route('uptime.home') }}">Uptime</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
