@@ -25,12 +25,13 @@ class StoreHostRequest extends FormRequest
     public function rules()
     {
         $checksList = Check::getList();
+
         return [
             'host_name' => 'required',
-            'host_ip' => 'required|ip',
-            'ssh_user' => 'required',
-            'ssh_port' => 'required|numeric',
-            'checks.*' => 'required|in:'.$checksList->implode(','),
+            'host_ip'   => 'required|ip',
+            'ssh_user'  => 'required',
+            'ssh_port'  => 'required|numeric',
+            'checks.*'  => 'required|in:'.$checksList->implode(','),
         ];
     }
 }

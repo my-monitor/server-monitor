@@ -8,12 +8,12 @@ return [
      * `Spatie\ServerMonitor\Checks\CheckDefinitions\CheckDefinition` class.
      */
     'checks' => [
-        'diskspace' => Spatie\ServerMonitor\CheckDefinitions\Diskspace::class,
+        'diskspace'     => Spatie\ServerMonitor\CheckDefinitions\Diskspace::class,
         'elasticsearch' => Spatie\ServerMonitor\CheckDefinitions\Elasticsearch::class,
-        'memcached' => Spatie\ServerMonitor\CheckDefinitions\Memcached::class,
-        'mysql' => Spatie\ServerMonitor\CheckDefinitions\MySql::class,
-        'memoryusage' => App\Checks\MemoryUsage::class,
-        'cpuusage' => App\Checks\CpuUsage::class,
+        'memcached'     => Spatie\ServerMonitor\CheckDefinitions\Memcached::class,
+        'mysql'         => Spatie\ServerMonitor\CheckDefinitions\MySql::class,
+        'memoryusage'   => App\Checks\MemoryUsage::class,
+        'cpuusage'      => App\Checks\CpuUsage::class,
     ],
 
     /*
@@ -37,9 +37,9 @@ return [
 
         'notifications' => [
             Spatie\ServerMonitor\Notifications\Notifications\CheckSucceeded::class => [],
-            Spatie\ServerMonitor\Notifications\Notifications\CheckRestored::class => ['slack','mail'],
-            Spatie\ServerMonitor\Notifications\Notifications\CheckWarning::class => ['slack','mail'],
-            Spatie\ServerMonitor\Notifications\Notifications\CheckFailed::class => ['slack','mail'],
+            Spatie\ServerMonitor\Notifications\Notifications\CheckRestored::class  => ['slack', 'mail'],
+            Spatie\ServerMonitor\Notifications\Notifications\CheckWarning::class   => ['slack', 'mail'],
+            Spatie\ServerMonitor\Notifications\Notifications\CheckFailed::class    => ['slack', 'mail'],
         ],
 
         /*
@@ -48,7 +48,7 @@ return [
          */
         'throttle_failing_notifications_for_minutes' => 60,
 
-		// Separate the email by , to add many recipients
+        // Separate the email by , to add many recipients
         'mail' => [
             'to' => env('NOTIFIED_EMAILS'),
         ],
@@ -97,7 +97,7 @@ return [
      */
     'diskspace_percentage_threshold' => [
         'warning' => 80,
-        'fail' => 90,
+        'fail'    => 90,
     ],
 
     /*
@@ -105,7 +105,7 @@ return [
      */
     'memoryusage_percentage_threshold' => [
         'warning' => 80,
-        'fail' => 90,
+        'fail'    => 90,
     ],
 
     /*
@@ -113,6 +113,6 @@ return [
      */
     'cpuusage_percentage_threshold' => [
         'warning' => 80,
-        'fail' => 90,
+        'fail'    => 90,
     ],
 ];
