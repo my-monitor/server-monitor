@@ -2,7 +2,7 @@
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'],function (){
+Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'ServersController@index')->name('servers.home');
     Route::get('/home', 'ServersController@index')->name('servers.home');
 
@@ -19,5 +19,4 @@ Route::group(['middleware' => 'auth'],function (){
     Route::get('/uptime/{id}/show', 'UptimeController@show')->name('uptime.show');
     Route::get('/uptime/{id}/edit', 'UptimeController@edit')->name('uptime.edit');
     Route::put('/uptime/{id}/update', 'UptimeController@update')->name('uptime.update');
-
 });
