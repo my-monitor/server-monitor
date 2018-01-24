@@ -1,5 +1,6 @@
 <?php
 
+use App\Ping;
 use Illuminate\Http\Request;
 
 /*
@@ -13,6 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['auth:api']], function () {
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::get('/ping/{key}', function ($key) {
+        $ping = Ping::where('key', $key)->first();
+        abort_if(!$ping, 404);
+
+        $ping->updateLastTimePing();
+
+        return response(null, 200);
+    })->name('ping.api');
 });
