@@ -28,7 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function liveTokens(){
-        return $this->tokens->where('revoked',0);
+    public function liveTokens()
+    {
+        return $this->tokens->where('revoked', 0);
     }
 }

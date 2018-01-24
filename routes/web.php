@@ -7,7 +7,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'ServersController@index')->name('servers.home');
 
     // OAuth
-    Route::get('/tokens','Auth\AuthController@index')->name('user.tokens');
+    Route::get('/tokens', 'Auth\AuthController@index')->name('user.tokens');
 
     Route::get('/servers', 'ServersController@index')->name('servers.home');
     Route::get('/servers/create', 'ServersController@create')->name('servers.create');

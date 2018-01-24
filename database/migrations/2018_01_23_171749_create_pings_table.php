@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePingsTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreatePingsTable extends Migration
         Schema::create('pings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('key',50)->uniuqe();
+            $table->string('key', 50)->uniuqe();
             $table->timestamp('uptime_last_check_date')->nullable();
             $table->integer('uptime_check_interval_in_seconds');
             $table->timestamps();

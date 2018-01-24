@@ -14,20 +14,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['middleware' => ['auth:api']],function(){
-
+Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
 
-    Route::get('/ping/{key}',function($key){
-
-        $ping = Ping::where('key',$key)->first();
-        abort_if(!$ping,404);
+    Route::get('/ping/{key}', function ($key) {
+        $ping = Ping::where('key', $key)->first();
+        abort_if(!$ping, 404);
 
         $ping->updateLastTimePing();
 
-        return response(null,200);
+        return response(null, 200);
     })->name('ping.api');
-
 });
