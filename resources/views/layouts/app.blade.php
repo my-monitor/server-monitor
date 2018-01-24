@@ -38,6 +38,7 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                         @if(auth()->check())
+                        <li><a href="{{ route('servers.home') }}">Servers</a></li>
                         <li><a href="{{ route('uptime.home') }}">Uptime</a></li>
                         <li><a href="{{ route('pings.home') }}">Ping Services</a></li>
                         @endif
