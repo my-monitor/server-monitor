@@ -19,23 +19,26 @@ class Ping extends Model
 
     public function getChecksStatuses()
     {
-        if($this->uptime_last_check_date == null){
+        if ($this->uptime_last_check_date == null) {
             $status = 'not yet checked';
         } else {
             $status = Carbon::now()->diffInSeconds($this->uptime_last_check_date) <= ($this->uptime_check_interval_in_seconds + 20) ? 'up' : 'down';
         }
+
         return self::statues[$status];
     }
 
-    public function updateLastTimePing(){
+    public function updateLastTimePing()
+    {
         $this->update(['uptime_last_check_date' => Carbon::now()]);
         $this->logs()->create([
            'user_id' => auth()->id(),
-            'header' => json_encode(request()->header())
+            'header' => json_encode(request()->header()),
         ]);
     }
 
-    public function logs(){
+    public function logs()
+    {
         return $this->hasMany(PingLogs::class)->orderByDesc('id');
     }
 }

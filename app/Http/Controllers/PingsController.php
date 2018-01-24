@@ -52,7 +52,7 @@ class PingsController extends Controller
 
     public function show($id)
     {
-        $ping = Ping::with('logs','logs.user')->findOrFail($id);
+        $ping = Ping::with('logs', 'logs.user')->findOrFail($id);
 
         return view('pings.show', compact('ping'));
     }
